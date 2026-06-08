@@ -22,7 +22,7 @@ import { UsersModule } from './users/users.module';
       database: process.env.DB_DATABASE,
 
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
 
       logging: true,
     }),
