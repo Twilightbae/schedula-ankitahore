@@ -12,7 +12,6 @@ import { UsersModule } from './users/users.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    
 
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -22,7 +21,9 @@ import { UsersModule } from './users/users.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
 
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
 
       autoLoadEntities: true,
       synchronize: false,
