@@ -7,6 +7,8 @@ import { DoctorModule } from './doctor/doctor.module';
 import { PatientModule } from './patient/patient.module';
 import { UsersModule } from './users/users.module';
 
+import { AvailabilityModule } from './availability/availability.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,9 +23,12 @@ import { UsersModule } from './users/users.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
 
+      ssl: {
+        rejectUnauthorized: false,
+      },
+
       autoLoadEntities: true,
       synchronize: false,
-
       logging: true,
     }),
 
@@ -31,6 +36,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     DoctorModule,
     PatientModule,
+    AvailabilityModule,
   ],
 })
 export class AppModule {}
