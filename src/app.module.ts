@@ -7,6 +7,10 @@ import { DoctorModule } from './doctor/doctor.module';
 import { PatientModule } from './patient/patient.module';
 import { UsersModule } from './users/users.module';
 
+import { AvailabilityModule } from './availability/availability.module';
+import { SlotsModule } from './slots/slots.module';
+import { AppointmentModule } from './appointment/appointment.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -27,7 +31,6 @@ import { UsersModule } from './users/users.module';
 
       autoLoadEntities: true,
       synchronize: false,
-
       logging: true,
     }),
 
@@ -35,6 +38,9 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     DoctorModule,
     PatientModule,
+    AvailabilityModule,
+    SlotsModule,
+    AppointmentModule,
   ],
 })
 export class AppModule {}
